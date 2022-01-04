@@ -1,51 +1,47 @@
-#def season(num):
-   #if num == 12 or 1 <= num <= 2:
-       #print("Talv")
-   #elif  3 <= num <= 5:
-       #print("Kevad")
-   #elif 6 <= num <= 8:
-       #print("Suvi")
-   #elif 9 <= num <= 11:
-       #print("Sügis")
-   #else:
-    #print("Tundmatu kuu")
-#n = int(input("Sisesta aastaaeg (1-12): "))
-#season(n)
+using System;
+
+namespace EpicBattle
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] heroes = { "Hog Rider", "Goblin", "Colt", "Spike" };
+            string[] villain = { "BlackMan", "NickErr", "Hitler", "Mortis", "Fatman" };
 
 
 
-#def bank(a:float,years:int)->float: 
-#    for i in range(years):
-#        a*=1.1
-#    return a
+
+            string randomHero = GetrandomCharacter(heroes);
+            string randomVillain = GetrandomCharacter(villain);
+            string heroWeapon = GetWeapon();
+            string villainWeapon = GetWeapon();
+            Console.WriteLine($"{randomHero} with {heroWeapon} will fight {randomVillain} with {villainWeapon});
+            Console.WriteLine($"Your random hero is {randomHero}");
+            Console.WriteLine($"Your random villain is {randomVillain}");
+        }
+
+        public static string GetrandomCharacter(string[] someArray)
+        {
+            
+
+            return someArray[GetRandomIndexForArray(someArray)];
+        }
+
+        public static string GetWeapon()
+        {
+            string[] weapon = { "Sausage", "Pan", "Ak47", "Pickle", "DickJohnson" };
+            return weapon[GetRandomIndexForArray(weapon)];
+
+           
+        }
+
+        public static int GetRandomIndexForArray(string[] someArray)
+        {
+            Random rnd = new Random();
+            return rnd.Next(0, someArray.Length);
+        }
 
 
-#a=bank(int(input("Euro=> ")))
-#print(a)
-
-#def is_prime(arv:int)->bool:
-#        t=0
-#        for i in range(1,arv+1):
-#            if arv%i==0:  t+=1
-#        if t==2:     
-#            t=True
-#        else:
-#            t=False
-#        return t
-
-
-
-#import datetime
-#day=int(input("Введи День: "))
-#month=int(input("Введи Месяц: "))
-#year=int(input("Введи Год: "))
-#print(day,month,year)
-
-
-#from datetime import *
-#def(d:int,m:int,y:int):
-#    print(date(y,m,d))
-
-from module1 import *
-print(date(2000,10,1))
-
+    }
+}
